@@ -91,7 +91,7 @@ class Task(ft.UserControl):
         
         return ft.Column(controls=[self.task_wrapper,self.edit_view])
     
-
+    # change to editor view, add current textvalue to textfield
     def edit_fnc(self, e):
         self.edit_field.value = self.text.value
         self.task_wrapper.visible = False
@@ -104,7 +104,7 @@ class Task(ft.UserControl):
         session.commit()
         self.task_delete(self)
 
-    # will be called if text was edited and submitted
+    # will be called when text was edited and submitted
     def save_clicked(self, e):
         self.text.value = self.edit_field.value
         self.edit_view.visible = False
